@@ -1,0 +1,64 @@
+<!-- DRAFT for Bach's review — not legal advice — confirm every statement matches how the system actually works before publishing. -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+<title>Privacy — {{brandName}}</title>
+<meta name="description" content="How {{brandName}} handles Instagram direct messages for the med spas it serves.">
+<meta property="og:title" content="Privacy — {{brandName}}">
+<meta property="og:description" content="How {{brandName}} handles Instagram direct messages for the med spas it serves.">
+<meta property="og:type" content="website">
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="legal">
+  <div class="container legal-inner">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy policy</h1>
+    <p class="muted small">Last updated: <time datetime="{{buildDateIso}}">{{lastUpdated}}</time></p>
+
+    <section aria-labelledby="p-who">
+      <h2 id="p-who">Who I am</h2>
+      <p>{{brandName}} is operated by {{ownerName}}, a sole proprietor in {{city}}. If you have any question about this policy or your data, email me at <a href="{{mailtoUrl}}">{{email}}</a>.</p>
+    </section>
+
+    <section aria-labelledby="p-what">
+      <h2 id="p-what">What the service processes</h2>
+      <p>{{brandName}} processes Instagram direct messages sent to a client spa’s Instagram account. Those messages are received through Meta’s official API and are used only to draft replies for the spa’s team to approve. It also stores the spa’s own pre-approved answers — such as its hours, services and booking link — which are the only material replies are drafted from.</p>
+    </section>
+
+    <section aria-labelledby="p-never">
+      <h2 id="p-never">What I never ask for</h2>
+      <p>The service never asks for health information, medications, symptoms or photos. If a message contains clinical content, it is routed to the spa and is not drafted into a reply. The sender receives a single fixed message asking them to call the spa, or 911 in an emergency.</p>
+    </section>
+
+    <section aria-labelledby="p-providers">
+      <h2 id="p-providers">Service providers</h2>
+      <ul>
+        <li><strong>Meta (Instagram)</strong> — to receive and send messages. Instagram keeps its own copy of every message sent through it, under Meta’s own policies.</li>
+        <li><strong>A third-party language-model API</strong> — to draft replies from the spa’s pre-approved answers.</li>
+        <li><strong>A workflow automation host</strong> — which runs the system that connects the pieces above.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="p-use">
+      <h2 id="p-use">How it’s used</h2>
+      <p>Messages are used only to draft replies for the spa. They are never sold, never used for advertising, and never used by me to train models.</p>
+    </section>
+
+    <section aria-labelledby="p-retention">
+      <h2 id="p-retention">Retention</h2>
+      <p>Message logs are kept for up to 90 days so I can troubleshoot problems and audit approvals. After that, they are deleted.</p>
+    </section>
+
+    <section aria-labelledby="p-control">
+      <h2 id="p-control">Your control</h2>
+      <p>Each spa owns its Instagram account and can disconnect {{brandName}} at any time. To ask for your data to be deleted, email <a href="{{mailtoUrl}}">{{email}}</a>.</p>
+    </section>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

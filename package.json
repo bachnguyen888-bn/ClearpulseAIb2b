@@ -1,0 +1,12 @@
+{
+  "name": "clearpulse-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ClearPulse marketing site — static, zero dependencies.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node build.mjs",
+    "og-image": "node tools/render-og.mjs"
+  }
+}
