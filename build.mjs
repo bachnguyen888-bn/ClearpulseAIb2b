@@ -40,8 +40,9 @@ const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const handle = config.instagramHandle;
 const mailtoUrl = `mailto:${config.email}`;
-const bookingHref = config.bookingUrl || `${mailtoUrl}?subject=15-minute%20call`;
-if (!config.bookingUrl) warn("bookingUrl is empty — booking buttons open an email to " + config.email + " instead. Add a Cal.com or Calendly link in site.config.mjs.");
+const instagramDmUrl = `https://ig.me/m/${handle}`;
+const bookingHref = config.bookingUrl || instagramDmUrl;
+if (!config.bookingUrl) warn(`bookingUrl is empty — booking buttons open a DM to @${handle} instead. Add a Cal.com or Calendly link in site.config.mjs.`);
 
 const hasPhoto = existsSync(join(ROOT, config.photoPath));
 if (!hasPhoto) warn(`Photo not found at ${config.photoPath} — showing the "${initials(config.ownerName)}" monogram instead. Add a real photo of yourself there.`);
@@ -65,7 +66,7 @@ const values = {
   serviceArea: config.serviceArea,
   serviceAreaShort: config.serviceAreaShort,
   handle,
-  instagramDmUrl: `https://ig.me/m/${handle}`,
+  instagramDmUrl,
   instagramProfileUrl: `https://www.instagram.com/${handle}/`,
   email: config.email,
   mailtoUrl,

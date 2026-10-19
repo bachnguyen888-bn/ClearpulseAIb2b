@@ -35,7 +35,7 @@ Change one line, then run `npm run build` again. On Vercel, just push.
 | Key | What it controls |
 | --- | --- |
 | `instagramHandle` | No `@`. Every DM link (`https://ig.me/m/<handle>`), profile link and visible @handle comes from this. |
-| `bookingUrl` | A free Cal.com or Calendly link. While it's empty, every "Book" button opens an email to you with the subject "15-minute call". |
+| `bookingUrl` | A free Cal.com or Calendly link. While it's empty, every "Book" button opens an Instagram DM to your account instead, so no button is ever dead. |
 | `priceMonthly`, `foundingSpots` | The price and number of spots everywhere, including the spelled-out word ("Three med spas…"). |
 | `liveDemoEnabled` | `false`: the hero leads with "Book a 15-minute call". `true`: it leads with "DM @handle to see it live" and the demo section becomes a try-it-now section. |
 | `photoPath` | Your photo, ideally 4:5 portrait. If the file is missing, a gold monogram is shown instead. |

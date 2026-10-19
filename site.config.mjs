@@ -6,11 +6,11 @@ export default {
   city: "Buena Park, CA",
   serviceArea: "Orange County & Los Angeles",
   serviceAreaShort: "Orange County & LA",  // used in the hero eyebrow and meta description
-  instagramHandle: "bizno_vate",           // no @; DM and profile links derive from it
+  instagramHandle: "getclearpulse",        // no @; DM and profile links derive from it
   email: "bachhuunguyen200824@gmail.com",
   phoneDisplay: "(714) 487-9882",
   phoneE164: "+17144879882",
-  bookingUrl: "",                          // free Cal.com or Calendly link; if empty, booking buttons become mailto:<email>?subject=15-minute%20call
+  bookingUrl: "https://cal.com/bach-nguyen-powxyv/15min", // free Cal.com or Calendly link; if empty, booking buttons open the Instagram DM link instead
   priceMonthly: 300,
   foundingSpots: 3,
   liveDemoEnabled: false,                  // true only after the demo account really replies with med spa copy
