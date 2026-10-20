@@ -34,6 +34,7 @@ Change one line, then run `npm run build` again. On Vercel, just push.
 
 | Key | What it controls |
 | --- | --- |
+| `brandShortName` | The only allowed short form of the name, used in the browser-tab icon: "CPLS". Never "CP" — the build fails if it appears. |
 | `instagramHandle` | No `@`. Every DM link (`https://ig.me/m/<handle>`), profile link and visible @handle comes from this. |
 | `bookingUrl` | A free Cal.com or Calendly link. While it's empty, every "Book" button opens an Instagram DM to your account instead, so no button is ever dead. |
 | `priceMonthly`, `foundingSpots` | The price and number of spots everywhere, including the spelled-out word ("Three med spas…"). |

@@ -1,6 +1,7 @@
 // Every business value on the site lives here. Edit a line, run `npm run build`, redeploy.
 export default {
   brandName: "ClearPulse",
+  brandShortName: "CPLS",                  // the only allowed short form (favicon); never "CP"
   ownerName: "Bach Nguyen",
   ownerAge: 18,
   city: "Buena Park, CA",

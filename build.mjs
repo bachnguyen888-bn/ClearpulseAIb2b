@@ -19,8 +19,11 @@ const warn = (msg) => warnings.push(msg);
 // ---------------------------------------------------------------------------
 // Config → template values
 
+// Brand rule: ClearPulse is never shortened to "CP". The only short form is "CPLS".
+const BRAND_BANNED = /\bCP\b/i;
+
 const required = {
-  brandName: "string", ownerName: "string", ownerAge: "number", city: "string",
+  brandName: "string", brandShortName: "string", ownerName: "string", ownerAge: "number", city: "string",
   serviceArea: "string", serviceAreaShort: "string", instagramHandle: "string",
   email: "string", phoneDisplay: "string", phoneE164: "string", bookingUrl: "string",
   priceMonthly: "number", foundingSpots: "number", liveDemoEnabled: "boolean", photoPath: "string",
@@ -32,6 +35,7 @@ if (config.instagramHandle?.startsWith("@")) fail('site.config.mjs: instagramHan
 if (config.phoneE164 && !/^\+\d{8,15}$/.test(config.phoneE164)) fail("site.config.mjs: phoneE164 must look like +17145550123.");
 if (config.bookingUrl && !/^https:\/\/\S+$/.test(config.bookingUrl)) fail("site.config.mjs: bookingUrl must start with https:// (or be empty).");
 if (config.siteUrl && !/^https:\/\/\S+$/.test(config.siteUrl)) fail("site.config.mjs: siteUrl must start with https:// (or be empty).");
+if (BRAND_BANNED.test(config.brandShortName ?? "")) fail('site.config.mjs: brandShortName must never be "CP" — use "CPLS".');
 bail();
 
 const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
@@ -56,7 +60,7 @@ const tz = "America/Los_Angeles";
 
 const values = {
   brandName: config.brandName,
-  brandInitials: initials(config.brandName, true),
+  brandShortName: config.brandShortName,
   ownerName: config.ownerName,
   ownerFirstName: config.ownerName.split(/\s+/)[0],
   ownerInitials: initials(config.ownerName),
@@ -89,8 +93,7 @@ values.metaDescription =
 
 const flags = { liveDemoEnabled: config.liveDemoEnabled, hasPhoto, hasOgImage, hasBookingUrl: Boolean(config.bookingUrl) };
 
-function initials(name, capitalsOnly = false) {
-  if (capitalsOnly) return (name.match(/[A-Z]/g) || [name[0]]).join("").slice(0, 2);
+function initials(name) {
   return name.split(/\s+/).map((w) => w[0]).join("").toUpperCase().slice(0, 2);
 }
 
@@ -210,7 +213,12 @@ if (existsSync(join(ROOT, "assets"))) {
     filter: (p) => !p.split(/[\\/]/).pop().startsWith("."),
   });
 }
-writeFileSync(join(DIST, "favicon.svg"), favicon(values.brandInitials));
+writeFileSync(join(DIST, "favicon.svg"), favicon(values.brandShortName));
+
+for (const file of [...PAGES, "favicon.svg"]) {
+  const m = readFileSync(join(DIST, file), "utf8").match(BRAND_BANNED);
+  if (m) fail(`${file}: contains "${m[0]}" — never shorten ClearPulse to "CP"; use "ClearPulse" or "CPLS".`);
+}
 
 // ---------------------------------------------------------------------------
 // Checks
@@ -293,7 +301,7 @@ function favicon(letters) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <rect width="64" height="64" rx="14" fill="#121214"/>
 <rect x="2.5" y="2.5" width="59" height="59" rx="11.5" fill="none" stroke="#C9A96E" stroke-opacity=".4"/>
-<text x="32" y="41.5" text-anchor="middle" font-family="Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#C9A96E">${escapeHtml(letters)}</text>
+<text x="32" y="38" text-anchor="middle" font-family="Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" letter-spacing="0" fill="#C9A96E">${escapeHtml(letters)}</text>
 </svg>
 `;
 }
