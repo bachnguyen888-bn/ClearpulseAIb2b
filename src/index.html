@@ -25,19 +25,18 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">For med spas in {{serviceAreaShort}}</p>
-        <h1 id="hero-title">More bookings. <span class="gold">Even after hours.</span></h1>
-        <p class="lede">After-hours Instagram DMs, answered in about a minute. Your team approves every reply. Medical questions never get an automated answer — they go straight to your phone.</p>
+        <h1 id="hero-title">Missed DMs are <span class="gold">missed bookings.</span></h1>
+        <p class="lede">A client who DMs at 10 p.m. and hears nothing until morning often books with whoever answers first. {{brandName}} drafts every reply from your approved wording, with your booking link, and you send it with one tap from your phone. Medical questions never get an automatic answer: they come straight to you.</p>
         <div class="cta-row">
 <!-- if:liveDemoEnabled -->
           <a class="btn btn-primary" href="{{instagramDmUrl}}">DM @{{handle}} to see it live</a>
-          <a class="btn btn-secondary" href="{{bookingHref}}">Book a 15-minute call</a>
+          <a class="btn btn-secondary" href="{{bookingHref}}">Book a 15-minute demo</a>
 <!-- else -->
-          <a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute call</a>
+          <a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute demo</a>
           <a class="btn btn-secondary" href="{{instagramDmUrl}}">DM me on Instagram</a>
-          <a class="btn btn-secondary" href="#how">See how it works</a>
 <!-- endif -->
         </div>
-        <p class="offer-line">${{priceMonthly}}/month · Cancel anytime</p>
+        <p class="offer-line">Founding spas: <strong>${{foundingPriceMonthly}}/month</strong> (standard ${{priceMonthly}}) · {{foundingSpots}} spots · Cancel anytime</p>
       </div>
 
       <figure class="hero-visual">
@@ -90,8 +89,8 @@
           </g>
         </svg>
 
-        <p class="example-label">Tuesday, 10:47 PM</p>
-        <div class="phone" role="img" aria-label="Example message thread. 9:47 PM, a client asks: hi! any openings for lip filler this week? A draft is ready and approved by the front desk. 9:49 PM, the spa's auto-reply: Hi! Thanks for reaching out — you can see every open time and book here, with a Book a time link. Result: booked for Thursday at 2:00 PM.">
+        <p class="example-label">Example · Tuesday, 9:47 PM</p>
+        <div class="phone" role="img" aria-label="Example thread. At 9:47 PM a client asks: hi! any openings for lip filler this week? The draft is approved with one tap. At 9:49 PM the spa's reply goes out: it says the spa is closed for the night and links to every open time, with a Book a time button. The client books on the spa's own booking page.">
           <div class="phone-bar" aria-hidden="true">
             <span class="phone-avatar"></span>
             <span class="phone-title">New client</span>
@@ -101,20 +100,20 @@
             <p class="bubble bubble-in">hi! any openings for lip filler this week?</p>
             <p class="thread-status">
               <svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Draft ready · Approved by front desk
+              Draft ready · Approved with one tap
             </p>
             <p class="thread-time">9:49 PM</p>
             <div class="bubble-out-wrap">
-              <span class="auto-tag">Auto-reply</span>
-              <p class="bubble bubble-out" data-voice="spa">Hi! Thanks for reaching out — you can see every open time and book here: <span class="link-chip">Book a time</span></p>
+              <span class="auto-tag">Approved reply</span>
+              <p class="bubble bubble-out" data-voice="spa">Hi! Thanks for reaching out. We’re closed right now, but you can see every open time and book anytime here: <span class="link-chip">Book a time</span></p>
             </div>
             <p class="booked-chip">
               <svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Booked · Thu 2:00 PM
+              They book on your booking page
             </p>
           </div>
         </div>
-        <figcaption class="phone-caption">Time your team spent: about four seconds.</figcaption>
+        <figcaption class="phone-caption">Your part: one tap, from your phone.</figcaption>
       </figure>
     </div>
   </section>
@@ -131,8 +130,9 @@
 <!-- else -->
       <p class="eyebrow">See it live</p>
       <h2 id="demo-title">Watch a real DM come in.</h2>
-      <p>On a 15-minute call I’ll show you the whole thing on a real phone — a DM arriving, the draft, the one-tap approval, the reply, and what happens when someone asks a medical question.</p>
-      <div class="cta-row"><a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute call</a></div>
+      <p>On a 15-minute call, you send a DM to my demo account from your own phone. You watch the draft arrive, see me tap Approve, and get the reply a few seconds later. Then you send a medical question and see that it never gets an automatic answer.</p>
+      <p>You leave with replies written for your five most common DMs, yours to keep whether or not you sign up.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute demo</a></div>
 <!-- endif -->
     </div></div>
   </section>
@@ -142,23 +142,28 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">How it works</p>
-        <h2 id="how-title">Three steps. One tap from your team.</h2>
+        <h2 id="how-title">Four steps. One tap from you.</h2>
       </div>
       <ol class="steps">
         <li class="card step reveal">
           <span class="step-num" aria-hidden="true">01</span>
           <h3>A client DMs after you close.</h3>
-          <p>A draft reply is ready in about a minute, built only from answers you’ve approved: your hours, your services, your booking link.</p>
+          <p>Or while everyone is with a client. Each message is sorted the moment it lands: booking, price question, existing client or medical.</p>
         </li>
         <li class="card step reveal">
           <span class="step-num" aria-hidden="true">02</span>
-          <h3>Your team approves it.</h3>
-          <p>The draft lands on your phone, and one tap sends it. For the first 60 days, nothing goes out unless someone on your team approves it.</p>
+          <h3>A reply is drafted in about a minute.</h3>
+          <p>Built only from wording you approved at setup: your hours, your pricing line and your booking link. Nothing is made up on the spot.</p>
         </li>
         <li class="card step reveal">
           <span class="step-num" aria-hidden="true">03</span>
-          <h3>They book while they’re still interested.</h3>
-          <p>They get your booking link the same night, not the next afternoon. You start the morning with a booked consult instead of a cold lead.</p>
+          <h3>You approve it with one tap.</h3>
+          <p>The draft arrives in Telegram on your phone. Tap Approve and it sends. Tap Don’t send and answer it yourself. Nothing goes out without that tap.</p>
+        </li>
+        <li class="card step reveal">
+          <span class="step-num" aria-hidden="true">04</span>
+          <h3>They book on your booking page.</h3>
+          <p>The reply sends them to your own booking link, where they book, and pay any deposit, the way they already do. {{brandName}} never books appointments or takes payments.</p>
         </li>
       </ol>
     </div>
@@ -170,8 +175,8 @@
       <div class="gate-grid">
         <div class="gate-copy reveal">
           <p class="eyebrow">The clinical gate</p>
-          <h2 id="gate-title">Some messages should never get an automated answer.</h2>
-          <p>If a message mentions swelling, pain, a reaction, or how a treatment is healing, nothing automated goes out except one line telling them to call you. You get an alert on your phone immediately — not in the morning.</p>
+          <h2 id="gate-title">Medical questions never get an automatic answer.</h2>
+          <p>If a message mentions swelling, pain, a reaction, or how a treatment is healing, nothing is drafted for it. You get an alert on your phone right away, without the client’s words in it, and the only reply you can approve is one fixed line asking them to call you.</p>
 
           <h3 class="list-title">What gets gated</h3>
           <ul class="gated-list">
@@ -182,13 +187,13 @@
           </ul>
 
           <figure class="fixed-reply">
-            <figcaption class="fixed-reply-label">The only reply a clinical message gets</figcaption>
-            <blockquote data-voice="spa"><p>“Please call us right now at the number in our bio. If this feels like an emergency, call 911.”</p></blockquote>
+            <figcaption class="fixed-reply-label">The only reply a clinical message gets, and only after you approve it</figcaption>
+            <blockquote data-voice="spa"><p>“Thank you for reaching out. Questions about a treatment, healing or your health always go to our clinical team, so we never answer them by automated message. Please call us at [your number]. If anything feels urgent, call 911.”</p></blockquote>
           </figure>
         </div>
 
         <figure class="flow reveal" aria-labelledby="flow-caption">
-          <figcaption id="flow-caption" class="visually-hidden">How a message moves through the clinical gate: an incoming DM is screened. A booking question is drafted for your approval. A clinical message gets the fixed safety reply, plus an alert to your phone.</figcaption>
+          <figcaption id="flow-caption" class="visually-hidden">How a message moves through the clinical gate: an incoming DM is sorted. A booking question is drafted for your one-tap approval. A clinical message gets no draft: you get an alert, and the only reply you can approve is the fixed safety line.</figcaption>
           <div class="flow-node">
             <span class="flow-kicker">Step 1</span>
             <span class="flow-name">Incoming DM</span>
@@ -196,18 +201,18 @@
           <span class="flow-arrow" aria-hidden="true"></span>
           <div class="flow-node flow-node-screen">
             <span class="flow-kicker">Step 2</span>
-            <span class="flow-name">Screened</span>
+            <span class="flow-name">Sorted</span>
             <span class="flow-sub">Booking or clinical?</span>
           </div>
           <span class="flow-arrow" aria-hidden="true"></span>
           <div class="flow-branches">
             <div class="flow-node flow-allow">
               <span class="flow-tag">Booking question</span>
-              <span class="flow-name">Drafted for your approval</span>
+              <span class="flow-name">Drafted for your one-tap approval</span>
             </div>
             <div class="flow-node flow-redirect">
               <span class="flow-tag">Clinical</span>
-              <span class="flow-name">Fixed safety reply + alert to your phone</span>
+              <span class="flow-name">Alert to your phone + one fixed reply you approve</span>
             </div>
           </div>
         </figure>
@@ -216,32 +221,105 @@
     </div>
   </section>
 
-  <!-- 5. Founding offer -->
+  <!-- 5. Proof -->
+  <section class="section section-proof" id="proof" aria-labelledby="proof-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Proof</p>
+        <h2 id="proof-title">31 of 31 test messages handled correctly.</h2>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-copy reveal">
+          <p>Before launch, I ran 31 test DMs through the full system: booking and price questions, medical questions, stop requests, a message that arrived twice, and forged ones. All 31 passed.</p>
+          <p>The second proof is the demo. On a 15-minute call, you watch it work on your own phone.</p>
+          <p class="muted">There are no client results or reviews on this page yet, and I won’t invent any. The founding spas will be the first.</p>
+        </div>
+        <ul class="proof-stats reveal">
+          <li class="card stat"><span class="stat-num">5 of 5</span><span class="stat-label">medical questions held for the owner, none answered automatically</span></li>
+          <li class="card stat"><span class="stat-num">3 of 3</span><span class="stat-label">stop requests honored</span></li>
+          <li class="card stat"><span class="stat-num">3 of 3</span><span class="stat-label">forged messages rejected before anything ran</span></li>
+          <li class="card stat"><span class="stat-num">1 reply</span><span class="stat-label">to a message Instagram delivered twice</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Founding offer -->
   <section class="section section-pricing" id="pricing" aria-labelledby="pricing-title">
     <div class="container pricing-grid">
       <div class="section-head reveal">
         <p class="eyebrow">Founding offer</p>
         <h2 id="pricing-title">{{foundingSpotsWordCap}} med spas, set up by me personally.</h2>
+        <p class="muted">Founding spas lock in ${{foundingPriceMonthly}} a month for 6 months while I set each one up myself.</p>
       </div>
       <div class="price-card card reveal">
         <div class="price-top">
-          <p class="price"><span class="price-amount">${{priceMonthly}}</span><span class="price-unit">/month</span></p>
-          <p class="price-terms">Cancel anytime</p>
+          <p class="price"><span class="price-amount">${{foundingPriceMonthly}}</span><span class="price-unit">/month</span></p>
+          <p class="price-terms">Standard price ${{priceMonthly}}/month · Price locked for 6 months · Cancel anytime</p>
         </div>
         <ul class="checklist">
-          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>I’ll personally set it up with you on a call.</li>
-          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Every reply approved by your team for the first 60 days</li>
-          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Medical and post-treatment questions always go straight to your phone</li>
-          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Replies use only answers you’ve approved — no invented prices, no promises you didn’t make</li>
+          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Every reply drafted from your approved wording, with your booking link</li>
+          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Nothing sends until you tap Approve in Telegram. Every reply, every time.</li>
+          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Medical and post-treatment questions never get an automatic answer. They come to you.</li>
+          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Set up with you personally on a call: your hours, your services, your booking link</li>
           <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Runs on your own Instagram account. Stop anytime and keep everything.</li>
+          <li><svg class="icon-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Billing starts the day replies go live on your account</li>
         </ul>
-        <div class="cta-row"><a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute call</a></div>
+        <div class="cta-row"><a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute demo</a></div>
         <p class="muted small price-foot">{{foundingSpots}} founding spots · {{serviceArea}}</p>
       </div>
     </div>
   </section>
 
-  <!-- 6. About -->
+  <!-- 7. FAQ -->
+  <section class="section section-faq" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">What med spa owners ask first.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Does it reply on its own?</summary>
+          <p>No. Every reply waits in Telegram until you, or someone you choose, taps Approve. If nobody taps, nothing sends.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if a draft is wrong?</summary>
+          <p>Tap Don’t send and answer from Instagram yourself. Drafts only use wording you approved at setup, so they can’t invent a price or a promise. Messages it can’t place, like a photo or a one-word DM, get no draft at all: you just get a note to open Instagram.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens at night?</summary>
+          <p>A 10 p.m. DM gets a draft in about a minute and a ping on your phone. Approve it from the couch and they have your booking link while they’re still looking. If you’re asleep, the draft waits for your tap in the morning. Nothing sends without you.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What about medical questions?</summary>
+          <p>They never get an automatic answer. You get an alert without the client’s words in it, and the only reply you can approve is one line asking them to call you. <a href="#gate">See the clinical gate</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does it cost?</summary>
+          <p>Founding spas pay ${{foundingPriceMonthly}} a month, price locked for 6 months. The standard price is ${{priceMonthly}} a month. Cancel anytime. Billing starts the day replies go live on your account.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it book appointments or take deposits?</summary>
+          <p>No. Every reply sends clients to your own booking link. They book, and pay any deposit, on your booking page, the same way they do now.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How soon can it go live?</summary>
+          <p>I can set everything up with you right away. Switching it on for your Instagram account needs one approval from Meta for my app, and Meta doesn’t give a date. You’re not billed until it’s live.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What do I need?</summary>
+          <p>An Instagram business account, your booking link, and Telegram on your phone (it’s free). Setup is one call with me.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What about my clients’ privacy?</summary>
+          <p>It never asks for health information, medical messages go to you instead of into the booking flow, and alerts never repeat a client’s medical message. The <a href="privacy.html">privacy page</a> covers what’s stored and for how long.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. About -->
   <section class="section section-about" id="about" aria-labelledby="about-title">
     <div class="container about-grid">
       <div class="about-photo reveal">
@@ -261,6 +339,19 @@
         </ul>
       </div>
     </div>
+  </section>
+
+  <!-- 9. Next step -->
+  <section class="section section-cta" id="book" aria-labelledby="book-title">
+    <div class="container"><div class="cta-inner reveal">
+      <p class="eyebrow">Next step</p>
+      <h2 id="book-title">See it on your own phone in 15 minutes.</h2>
+      <p>Book a time that works for you, or DM me on Instagram if that’s easier.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{bookingHref}}">Book a 15-minute demo</a>
+        <a class="btn btn-secondary" href="{{instagramDmUrl}}">DM me on Instagram</a>
+      </div>
+    </div></div>
   </section>
 
 </main>

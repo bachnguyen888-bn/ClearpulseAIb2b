@@ -26,7 +26,7 @@ const required = {
   brandName: "string", brandShortName: "string", ownerName: "string", ownerAge: "number", city: "string",
   serviceArea: "string", serviceAreaShort: "string", instagramHandle: "string",
   email: "string", phoneDisplay: "string", phoneE164: "string", bookingUrl: "string",
-  priceMonthly: "number", foundingSpots: "number", liveDemoEnabled: "boolean", photoPath: "string",
+  priceMonthly: "number", foundingPriceMonthly: "number", foundingSpots: "number", liveDemoEnabled: "boolean", photoPath: "string",
 };
 for (const [key, type] of Object.entries(required)) {
   if (typeof config[key] !== type) fail(`site.config.mjs: "${key}" must be a ${type}.`);
@@ -78,6 +78,7 @@ const values = {
   telUrl: `tel:${config.phoneE164}`,
   bookingHref,
   priceMonthly: String(config.priceMonthly),
+  foundingPriceMonthly: String(config.foundingPriceMonthly),
   foundingSpots: String(config.foundingSpots),
   foundingSpotsWord: numberWord(config.foundingSpots),
   foundingSpotsWordCap: capitalize(numberWord(config.foundingSpots)),
@@ -88,8 +89,9 @@ const values = {
   buildDateIso: new Intl.DateTimeFormat("en-CA", { timeZone: tz }).format(now),
 };
 values.metaDescription =
-  `After-hours Instagram DM replies for med spas in ${values.serviceAreaShort}. Your team approves every reply; ` +
-  `medical questions go straight to your phone. $${values.priceMonthly}/month.`;
+  `After-hours Instagram DM replies for med spas in ${values.serviceAreaShort}. Every reply is drafted with your ` +
+  `booking link and sent only when you approve it; medical questions go straight to you. ` +
+  `Founding spas $${values.foundingPriceMonthly}/month.`;
 
 const flags = { liveDemoEnabled: config.liveDemoEnabled, hasPhoto, hasOgImage, hasBookingUrl: Boolean(config.bookingUrl) };
 
@@ -288,6 +290,11 @@ function checkTemplateForHardcodedValues(page, template) {
   };
   for (const [key, val] of Object.entries(literals)) {
     if (word(val).test(haystack)) fail(`src/${page}: hardcoded ${key} ("${val}") — use {{…}} from site.config.mjs.`);
+  }
+  // The founding price is checked against visible text only: the hero SVG's coordinates contain "200".
+  const textOnly = chunks.map((c) => c.text).join("\n");
+  if (word(config.foundingPriceMonthly).test(textOnly)) {
+    fail(`src/${page}: hardcoded foundingPriceMonthly ("${config.foundingPriceMonthly}") — use {{foundingPriceMonthly}} from site.config.mjs.`);
   }
   const spots = new RegExp(`\\b(${config.foundingSpots}|${numberWord(config.foundingSpots)})\\s+(founding|med\\s+spas|spas|spots)\\b`, "i");
   if (spots.test(haystack)) fail(`src/${page}: hardcoded number of founding spots — use {{foundingSpots}} / {{foundingSpotsWord}}.`);
